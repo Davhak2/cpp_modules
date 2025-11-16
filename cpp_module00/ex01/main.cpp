@@ -15,10 +15,13 @@ int main() {
 
 	std::cout << "Welcome to the PhoneBook!" << std::endl;
 	std::cout << "Available commands: ADD, SEARCH, EXIT" << std::endl;
-	while (!0) {
-		std::cout << "Enter command: " << std::endl;
-		std::getline(std::cin, cmd);
 
+	while (!0) {
+		std::cout << "Enter command: ";
+		if (!std::getline(std::cin, cmd)) {
+			std::cout << "\nEOF detected." << std::endl;
+			break;
+		}
 		if (cmd == "EXIT") {
 			std::cout << "Goodbye!" << std::endl;
 			break ;

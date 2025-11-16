@@ -1,7 +1,7 @@
 SRCS = phonebook.cpp main.cpp\
 
 OBJS = $(SRCS:.cpp=.o)
-NAME = megaphone
+NAME = phonebook
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 CPP = c++
 RM = rm -f
