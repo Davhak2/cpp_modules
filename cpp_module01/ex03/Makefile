@@ -1,7 +1,7 @@
 SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 OBJS = $(SRCS:.cpp=.o)
-NAME = HI_THIS_IS_BRAIN
+NAME = Unnecessary_violence
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 CPP = c++
 RM = rm -f

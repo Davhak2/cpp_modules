@@ -1,7 +1,7 @@
 SRCS = main.cpp\
 
 OBJS = $(SRCS:.cpp=.o)
-NAME = HI_THIS_IS_BRAIN
+NAME = Sed_is_for_losers
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 CPP = c++
 RM = rm -f
