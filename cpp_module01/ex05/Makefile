@@ -1,7 +1,7 @@
-SRCS = main.cpp\
+SRCS = main.cpp Harl.cpp\
 
 OBJS = $(SRCS:.cpp=.o)
-NAME = HI_THIS_IS_BRAIN
+NAME = Harl2.0
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 CPP = c++
 RM = rm -f
