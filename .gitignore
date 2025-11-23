@@ -11,5 +11,9 @@ cpp_module01/ex04/*.txt
 cpp_module01/ex04/file*
 cpp_module01/ex05/Harl2.0
 cpp_module01/ex06/harlFilter
-cpp_module02/ex00/
+cpp_module02/ex00/OCF
+cpp_module02/ex01/OCFplusFloatInt
+cpp_module02/ex02/OCFplusFloatIntMF
+cpp_module02/ex03/BSP
+
 
