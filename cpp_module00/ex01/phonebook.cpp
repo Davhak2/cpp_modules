@@ -64,11 +64,13 @@ bool PhoneBook::isDuplicate(const std::string &phoneNumber, const std::string &n
 {
 	for (int i = 0; i < cnt; i++)
 	{
-		if (contact[i].getNickname() == nickname) {
+		if (contact[i].getNickname() == nickname)
+		{
 			std::cout << "Error: Nickname already exists!" << std::endl;
 			return true;
 		}
-		if (contact[i].getPhoneNumber() == phoneNumber) {
+		if (contact[i].getPhoneNumber() == phoneNumber)
+		{
 			std::cout << "Error: Phone number already exists!" << std::endl;
 			return true;
 		}
@@ -78,15 +80,17 @@ bool PhoneBook::isDuplicate(const std::string &phoneNumber, const std::string &n
 
 void PhoneBook::addContact()
 {
-	std::string	firstName;
-	std::string	lastName;
-	std::string	nickname;
-	std::string	phoneNumber;
-	std::string	secret;
+	std::string firstName;
+	std::string lastName;
+	std::string nickname;
+	std::string phoneNumber;
+	std::string secret;
 
-	do {
+	do
+	{
 		std::cout << "Enter first name (alphabetic characters only): ";
-		if (!std::getline(std::cin, firstName)) {
+		if (!std::getline(std::cin, firstName))
+		{
 			std::cout << "\nInput interrupted." << std::endl;
 			exit(0);
 		}
@@ -94,9 +98,11 @@ void PhoneBook::addContact()
 			std::cout << "Invalid! First name must contain only alphabetic characters." << std::endl;
 	} while (!isValidName(firstName));
 
-	do {
+	do
+	{
 		std::cout << "Enter last name (alphabetic characters only): ";
-		if (!std::getline(std::cin, lastName)) {
+		if (!std::getline(std::cin, lastName))
+		{
 			std::cout << "\nInput interrupted." << std::endl;
 			exit(0);
 		}
@@ -104,9 +110,11 @@ void PhoneBook::addContact()
 			std::cout << "Invalid! Last name must contain only alphabetic characters." << std::endl;
 	} while (!isValidName(lastName));
 
-	do {
+	do
+	{
 		std::cout << "Enter nickname: ";
-		if (!std::getline(std::cin, nickname)) {
+		if (!std::getline(std::cin, nickname))
+		{
 			std::cout << "\nInput interrupted." << std::endl;
 			exit(0);
 		}
@@ -114,14 +122,17 @@ void PhoneBook::addContact()
 			std::cout << "Nickname cannot be empty!" << std::endl;
 	} while (nickname.empty());
 
-	if (isDuplicate(phoneNumber, nickname)) {
+	if (isDuplicate(phoneNumber, nickname))
+	{
 		std::cout << "Contact not added due to duplicate information." << std::endl;
-		return ;
+		return;
 	}
 
-	do {
+	do
+	{
 		std::cout << "Enter phone number (can start with +, then digits only): ";
-		if (!std::getline(std::cin, phoneNumber)) {
+		if (!std::getline(std::cin, phoneNumber))
+		{
 			std::cout << "\nInput interrupted." << std::endl;
 			exit(0);
 		}
@@ -129,14 +140,17 @@ void PhoneBook::addContact()
 			std::cout << "Invalid! Phone number can start with + followed by digits only." << std::endl;
 	} while (!isValidPhoneNumber(phoneNumber));
 
-	if (isDuplicate(phoneNumber, nickname)) {
+	if (isDuplicate(phoneNumber, nickname))
+	{
 		std::cout << "Contact not added due to duplicate information." << std::endl;
-		return ;
+		return;
 	}
 
-	do {
+	do
+	{
 		std::cout << "Enter darkest secret: ";
-		if (!std::getline(std::cin, secret)) {
+		if (!std::getline(std::cin, secret))
+		{
 			std::cout << "\nInput interrupted." << std::endl;
 			exit(0);
 		}
@@ -144,12 +158,15 @@ void PhoneBook::addContact()
 			std::cout << "Darkest secret cannot be empty!" << std::endl;
 	} while (secret.empty());
 
-	if (cnt < 8) {
+	if (cnt < 8)
+	{
 		contact[cnt].set(firstName, lastName, nickname, phoneNumber, secret);
 		cnt++;
 	}
-	else {
-		for (int i = 0; i < 7; i++) {
+	else
+	{
+		for (int i = 0; i < 7; i++)
+		{
 			contact[i] = contact[i + 1];
 		}
 		contact[7].set(firstName, lastName, nickname, phoneNumber, secret);
@@ -174,10 +191,12 @@ void PhoneBook::search() const
 	for (int i = 0; i < cnt; i++)
 		contact[i].display_byidx(i);
 
-	while (!0) {
+	while (!0)
+	{
 		std::cout << "Enter index to search for a contact or type CANCEL: ";
 		std::string input;
-		if (!std::getline(std::cin, input)) {
+		if (!std::getline(std::cin, input))
+		{
 			std::cout << "\nInput interrupted. Exiting program." << std::endl;
 			exit(0);
 		}
@@ -186,8 +205,10 @@ void PhoneBook::search() const
 		if (input.empty())
 			continue;
 		bool isValidNumber = true;
-		for (size_t i = 0; i < input.length(); i++) {
-			if (!std::isdigit(input[i])) {
+		for (size_t i = 0; i < input.length(); i++)
+		{
+			if (!std::isdigit(input[i]))
+			{
 				isValidNumber = false;
 				std::cout << "Invalid index" << std::endl;
 				break;
@@ -197,7 +218,8 @@ void PhoneBook::search() const
 		if (!isValidNumber)
 			continue;
 		int idx = std::atoi(input.c_str());
-		if (idx >= 0 && idx < cnt) {
+		if (idx >= 0 && idx < cnt)
+		{
 			contact[idx].display_full();
 			return;
 		}

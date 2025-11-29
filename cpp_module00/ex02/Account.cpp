@@ -1,12 +1,3 @@
-// ************************************************************************** //
-//                                                                            //
-//                Account.cpp for GlobalBanksters United                //
-//                Created on  : Thu Nov 20 19:43:15 1989                      //
-//                Last update : Wed Jan 04 14:54:06 1992                      //
-//                Made by : Brad "Buddy" McLane <bm@gbu.com>                  //
-//                                                                            //
-// ************************************************************************** //
-
 #include "Account.hpp"
 
 int Account::_nbAccounts = 0;
@@ -46,7 +37,7 @@ void Account::displayAccountsInfos(void)
 void Account::_displayTimestamp(void)
 {
 	std::time_t now = std::time(0);
-	std::tm* timeinfo = std::localtime(&now);
+	std::tm *timeinfo = std::localtime(&now);
 
 	std::cout << "[" << (timeinfo->tm_year + 1900)
 			  << std::setfill('0') << std::setw(2) << (timeinfo->tm_mon + 1)
