@@ -1,14 +1,5 @@
 #include "phonebook.hpp"
 
-
-void add(PhoneBook &pb) {
-	pb.addContact();
-}
-
-void search(PhoneBook &pb) {
-	pb.search();
-}
-
 int main() {
 	PhoneBook	pb;
 	std::string	cmd;
@@ -19,7 +10,7 @@ int main() {
 	while (!0) {
 		std::cout << "Enter command: ";
 		if (!std::getline(std::cin, cmd)) {
-			std::cout << "\nEOF detected." << std::endl;
+			std::cout << "\nInput interrupted." << std::endl;
 			break;
 		}
 		if (cmd == "EXIT") {
@@ -27,9 +18,9 @@ int main() {
 			break ;
 		}
 		else if (cmd == "ADD")
-			add(pb);
+			pb.addContact();
 		else if (cmd == "SEARCH")
-			search(pb);
+			pb.search();
 		else if (!cmd.empty())
 			std::cout << "Invalid command! Use ADD, SEARCH, or EXIT." << std::endl;
 	}
