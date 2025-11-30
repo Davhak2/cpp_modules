@@ -62,7 +62,7 @@ void PhoneBook::addContact()
 		if (!std::getline(std::cin, firstName))
 		{
 			std::cout << "\nInput interrupted." << std::endl;
-			return;
+			std::exit(0);
 		}
 		if (!isValidName(firstName))
 			std::cout << "Invalid! First name must contain only alphabetic characters." << std::endl;
@@ -74,7 +74,7 @@ void PhoneBook::addContact()
 		if (!std::getline(std::cin, lastName))
 		{
 			std::cout << "\nInput interrupted." << std::endl;
-			return;
+			std::exit(0);
 		}
 		if (!isValidName(lastName))
 			std::cout << "Invalid! Last name must contain only alphabetic characters." << std::endl;
@@ -86,7 +86,7 @@ void PhoneBook::addContact()
 		if (!std::getline(std::cin, nickname))
 		{
 			std::cout << "\nInput interrupted." << std::endl;
-			return;
+			std::exit(0);
 		}
 		if (nickname.empty())
 			std::cout << "Nickname cannot be empty!" << std::endl;
@@ -104,7 +104,7 @@ void PhoneBook::addContact()
 		if (!std::getline(std::cin, phoneNumber))
 		{
 			std::cout << "\nInput interrupted." << std::endl;
-			return;
+			std::exit(0);
 		}
 		if (!isValidPhoneNumber(phoneNumber))
 			std::cout << "Invalid! Phone number can start with + followed by digits only." << std::endl;
@@ -122,7 +122,7 @@ void PhoneBook::addContact()
 		if (!std::getline(std::cin, secret))
 		{
 			std::cout << "\nInput interrupted." << std::endl;
-			return;
+			std::exit(0);
 		}
 		if (secret.empty())
 			std::cout << "Darkest secret cannot be empty!" << std::endl;
@@ -166,7 +166,7 @@ void PhoneBook::search() const
 		if (!std::getline(std::cin, input))
 		{
 			std::cout << "\nInput interrupted." << std::endl;
-			return;
+			std::exit(0);
 		}
 		if (input == "CANCEL")
 			return;

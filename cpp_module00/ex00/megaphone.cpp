@@ -5,7 +5,7 @@
 void	print_str(std::string s)
 {
 	for (size_t i = 0; i < s.length(); i++)
-		std::cout << (char)toupper(s[i]);
+		std::cout << (char)std::toupper(s[i]);
 }
 
 int	main(int argc, char **argv){

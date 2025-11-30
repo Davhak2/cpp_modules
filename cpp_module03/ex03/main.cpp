@@ -13,7 +13,8 @@ int main()
 	DiamondTrap shiny("Shiny");
 	shiny.whoAmI();
 
-	for (int i = 0; i < 55; i++) {
+	for (int i = 0; i < 55; i++)
+	{
 		std::cout << "Attack #" << i + 1 << ": ";
 		shiny.attack("Target2");
 	}

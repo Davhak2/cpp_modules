@@ -1,19 +1,23 @@
 #include "ClapTrap.hpp"
 #include <sstream>
 
-std::string intToString(int value) {
+std::string intToString(int value)
+{
 	std::stringstream ss;
 	ss << value;
 	return ss.str();
 }
 
-void printSeparator(const std::string& title) {
-	std::cout << "\n" << std::string(50, '=') << std::endl;
+void printSeparator(const std::string &title)
+{
+	std::cout << "\n"
+			  << std::string(50, '=') << std::endl;
 	std::cout << "  " << title << std::endl;
 	std::cout << std::string(50, '=') << std::endl;
 }
 
-int main() {
+int main()
+{
 	printSeparator("CONSTRUCTOR TESTS");
 
 	std::cout << "\n1. Default Constructor:" << std::endl;
@@ -32,7 +36,8 @@ int main() {
 	warrior.attack("Training Dummy");
 
 	std::cout << "\n2. Multiple Attacks to test energy consumption:" << std::endl;
-	for (int i = 1; i <= 5; i++) {
+	for (int i = 1; i <= 5; i++)
+	{
 		std::cout << "Attack " << i << ": ";
 		warrior.attack("Enemy " + intToString(i));
 	}
@@ -49,11 +54,15 @@ int main() {
 	ClapTrap energyTest("EnergyTest");
 
 	// Use up all 10 energy points
-	for (int i = 1; i <= 6; i++) {
+	for (int i = 1; i <= 6; i++)
+	{
 		std::cout << "Energy action " << i << ": ";
-		if (i % 2 == 0) {
+		if (i % 2 == 0)
+		{
 			energyTest.beRepaired(1);
-		} else {
+		}
+		else
+		{
 			energyTest.attack("Target");
 		}
 	}
@@ -83,7 +92,7 @@ int main() {
 
 	std::cout << "\n1. Assignment operator:" << std::endl;
 	ClapTrap assignee("Assignee");
-	assignee = warrior;  // warrior has used some energy
+	assignee = warrior; // warrior has used some energy
 
 	std::cout << "\n2. Self-assignment test:" << std::endl;
 	assignee = assignee;
@@ -101,7 +110,8 @@ int main() {
 
 	std::cout << "\n2. Repair while low on energy:" << std::endl;
 	ClapTrap repairTest("RepairTest");
-	for (int i = 0; i < 9; i++) {
+	for (int i = 0; i < 9; i++)
+	{
 		repairTest.attack("Target");
 	}
 	repairTest.beRepaired(5);

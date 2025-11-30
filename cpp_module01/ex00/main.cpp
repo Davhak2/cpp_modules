@@ -1,12 +1,13 @@
 #include "Zombie.hpp"
 
-int main() {
+int main()
+{
 	std::cout << "=== Heap zombie ===\n";
-	Zombie* z1 = newZombie("HeapOne");
+	Zombie *z1 = newZombie("HeapOne");
 	z1->announce();
 
 	std::cout << "\n=== Another heap zombie ===\n";
-	Zombie* z2 = newZombie("HeapTwo");
+	Zombie *z2 = newZombie("HeapTwo");
 	z2->announce();
 
 	std::cout << "\nDeleting HeapOne manually...\n";
@@ -23,7 +24,7 @@ int main() {
 	std::cout << "Block ending... stack zombies will auto-destroy.\n";
 
 	std::cout << "\n=== Creating multiple heap zombies ===\n";
-	Zombie* list[3];
+	Zombie *list[3];
 	list[0] = newZombie("HeapA");
 	list[1] = newZombie("HeapB");
 	list[2] = newZombie("HeapC");

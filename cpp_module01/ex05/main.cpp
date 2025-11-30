@@ -5,9 +5,11 @@ int main()
 	Harl harl;
 	std::string level;
 
-	while (!0) {
+	while (!0)
+	{
 		std::cout << "Level for Harl: ";
-		if (!std::getline(std::cin, level)) {
+		if (!std::getline(std::cin, level))
+		{
 			std::cout << std::endl;
 			break;
 		}

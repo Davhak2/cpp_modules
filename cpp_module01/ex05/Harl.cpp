@@ -31,12 +31,12 @@ void Harl::error(void) const
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-std::string levels[4] = { "DEBUG", "INFO", "WARNING", "ERROR" };
+std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 void Harl::complain(std::string level) const
 {
 	int i;
-	void (Harl::*methodPtrs[4])(void) const = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
+	void (Harl::*methodPtrs[4])(void) const = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
 	if (level.empty())
 		return;

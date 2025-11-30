@@ -64,88 +64,106 @@ std::ostream &operator<<(std::ostream &out, const Fixed &fx)
 	return out;
 }
 
-bool	Fixed::operator<=(const Fixed &other) const {
+bool Fixed::operator<=(const Fixed &other) const
+{
 	return value <= other.value;
 }
 
-bool	Fixed::operator>=(const Fixed &other) const {
+bool Fixed::operator>=(const Fixed &other) const
+{
 	return value >= other.value;
 }
 
-bool	Fixed::operator<(const Fixed &other) const {
+bool Fixed::operator<(const Fixed &other) const
+{
 	return value < other.value;
 }
 
-bool	Fixed::operator>(const Fixed &other) const {
+bool Fixed::operator>(const Fixed &other) const
+{
 	return value > other.value;
 }
 
-bool	Fixed::operator!=(const Fixed &other) const {
+bool Fixed::operator!=(const Fixed &other) const
+{
 	return value != other.value;
 }
 
-bool	Fixed::operator==(const Fixed &other) const {
+bool Fixed::operator==(const Fixed &other) const
+{
 	return value == other.value;
 }
 
-Fixed	Fixed::operator+(const Fixed &other) const {
+Fixed Fixed::operator+(const Fixed &other) const
+{
 	Fixed res;
 	res.value = this->value + other.value;
 	return res;
 }
 
-Fixed	Fixed::operator-(const Fixed &other) const {
+Fixed Fixed::operator-(const Fixed &other) const
+{
 	Fixed res;
 	res.value = this->value - other.value;
 	return res;
 }
 
-Fixed	Fixed::operator*(const Fixed &other) const {
+Fixed Fixed::operator*(const Fixed &other) const
+{
 	Fixed res;
 	res.value = (this->value * other.value) >> bits;
 	return res;
 }
 
-Fixed	Fixed::operator/(const Fixed &other) const {
+Fixed Fixed::operator/(const Fixed &other) const
+{
 	Fixed res;
 	res.value = (this->value << bits) / other.value;
 	return res;
 }
 
-Fixed	&Fixed::operator++() {
+Fixed &Fixed::operator++()
+{
 	++value;
 	return *this;
 }
 
-Fixed	Fixed::operator++(int) {
+Fixed Fixed::operator++(int)
+{
 	Fixed tmp(*this);
 	++value;
 	return tmp;
 }
 
-Fixed	&Fixed::operator--() {
+Fixed &Fixed::operator--()
+{
 	--value;
 	return *this;
 }
 
-Fixed	Fixed::operator--(int) {
+Fixed Fixed::operator--(int)
+{
 	Fixed tmp(*this);
 	--value;
 	return tmp;
 }
 
-Fixed	&Fixed::min(Fixed &a, Fixed &b) {
+Fixed &Fixed::min(Fixed &a, Fixed &b)
+{
 	return (a < b) ? a : b;
 }
 
-const Fixed	&Fixed::min(const Fixed &a, const Fixed &b) {
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b)
+{
 	return (a < b) ? a : b;
 }
 
-Fixed	&Fixed::max(Fixed &a, Fixed &b) {
+Fixed &Fixed::max(Fixed &a, Fixed &b)
+{
 	return (a > b) ? a : b;
 }
 
-const Fixed	&Fixed::max(const Fixed &a, const Fixed &b) {
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
+{
 	return (a > b) ? a : b;
 }

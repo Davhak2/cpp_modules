@@ -30,18 +30,18 @@ void Harl::complain(std::string level)
 		&Harl::debug,
 		&Harl::info,
 		&Harl::warning,
-		&Harl::error
-	};
+		&Harl::error};
 
 	std::string levels[4] = {
 		"DEBUG",
 		"INFO",
 		"WARNING",
-		"ERROR"
-	};
+		"ERROR"};
 
-	for (int i = 0; i < 4; i++) {
-		if (levels[i] == level) {
+	for (int i = 0; i < 4; i++)
+	{
+		if (levels[i] == level)
+		{
 			(this->*complaints[i])();
 			return;
 		}
