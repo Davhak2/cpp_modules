@@ -1,12 +1,11 @@
 SRCS = main.cpp \
-	AMateria.cpp \
-	Character.cpp \
-	Cure.cpp \
-	Ice.cpp \
-	MateriaSource.cpp
+	brain.cpp \
+	animal.cpp \
+	dog.cpp \
+	cat.cpp
 
 OBJS = $(SRCS:.cpp=.o)
-NAME = materia
+NAME = brain
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 CPP = c++
 RM = rm -f
